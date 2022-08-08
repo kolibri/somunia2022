@@ -14,8 +14,8 @@ run_action () {
   then
     run_cmd ${@:2}
 
-  elif [[ "dev-start" = $ACTION ]]; then
-    run_cmd yarn watch ${@:2}
+  elif [[ "dev-server" = $ACTION ]]; then
+    run_cmd yarn serve ${@:2}
 
   elif [[ "npm" = $ACTION ]]; then
     run_cmd npm ${@:2}
@@ -26,7 +26,6 @@ run_action () {
   elif [[ "help" = $ACTION ]]; then
     helptext
   else
-    run_cmd npm $@
     exit 1
   fi
 }

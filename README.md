@@ -1,15 +1,7 @@
-# 🚀 Welcome to your new awesome project!
+# somunia2022 typescript approach
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
 
 ```
-yarn build
+yarn serve
 ```
 
-to bundle your application
