@@ -1,7 +1,6 @@
 "use strict"
 
 import { 
-	StageInterface,
 	Stage,
 	CanvasStage,
 	HudStage,
@@ -16,12 +15,12 @@ import {
 
 
 
-class Game {
+export class Game {
 	readonly config: string = "dev"
-	readonly stage: StageInterface
+	readonly stage: Stage
 	readonly state: GameStateInterface
 
-	constructor(config: string, stage: StageInterface) {
+	constructor(config: string, stage: Stage) {
 		this.config = config
 		this.stage = stage
 		this.state = new GameState()

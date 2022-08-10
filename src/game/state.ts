@@ -10,7 +10,6 @@ export class GameState implements GameStateInterface {
     get(key: string) {
         if (!(key in this.state)) {
             throw new GameStateNotFoundError(key)
-
         }
 
         return this.state[key]

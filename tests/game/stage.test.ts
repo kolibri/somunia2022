@@ -1,6 +1,7 @@
+/** not implemented yet
 import { GameState, GameStateNotFoundError } from '../../src/game/state'
 
-describe('game state works', () => {
+describe('stage testing', () => {
   test('can add and get value', () => {
     let gameState = new GameState()
     gameState.set('test', 'someValue')
@@ -14,4 +15,4 @@ describe('game state works', () => {
 });
 
 
-
+*/

@@ -2,6 +2,7 @@
 
 
 ```
+yarn jest
 yarn serve
 ```
 

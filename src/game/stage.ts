@@ -48,7 +48,7 @@ export interface StageInterface {
 	render(state: GameStateInterface): void
 }
 
-export class Stage implements StageInterface {
+export class Stage {
 	readonly stages: StageInterface[]
 
 	constructor(stages: StageInterface[]) {
