@@ -1,4 +1,3 @@
-// import { GameStateInterface } from "./state";
 import { GameState, GameStateNotFoundError } from '../../src/game/state'
 
 describe('game state works', () => {
@@ -9,13 +8,10 @@ describe('game state works', () => {
   });
 
   test("error on getting inexistend key", () => {
-
    let gameState = new GameState()
-
-//    expect(gameState.get('test')).toThrow(Error);
-    expect(() => {gameState.get('test')}).toThrow(GameStateNotFoundError)
-
-  });
+   expect(() => {gameState.get('test')}).toThrow(GameStateNotFoundError)
+ });
 });
+
 
 

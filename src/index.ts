@@ -1,7 +1,6 @@
 "use strict"
 
 import { 
-	StageInterface,
 	Stage,
 	CanvasStage,
 	HudStage,
@@ -13,40 +12,9 @@ import {
 	GameState
 } from "./game/state";
 
-
-
-
-class Game {
-	readonly config: string = "dev"
-	readonly stage: StageInterface
-	readonly state: GameStateInterface
-
-	constructor(config: string, stage: StageInterface) {
-		this.config = config
-		this.stage = stage
-		this.state = new GameState()
-	}
-
-	init() {
-		
-		this.stage.init()
-	}
-
-	render() {
-		this.stage.render(this.state)
-	}
-
-	run() {
-		console.log('run')
-		requestAnimationFrame(this.gameLoop)
-	}
-
-	gameLoop = () => {
-		this.render()
-		requestAnimationFrame(this.gameLoop)
-	}
-}
-
+import { 
+	Game
+} from "./game/game";
 
 
 const mainElement = document.getElementById('game')
