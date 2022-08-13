@@ -12,6 +12,3 @@ describe('game state works', () => {
    expect(() => {gameState.get('test')}).toThrow(GameStateNotFoundError)
  });
 });
-
-
-

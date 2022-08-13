@@ -1,6 +1,6 @@
-import { Stage, StageInterface } from '../../src/game/stage'
-import { GameStateInterface } from '../../src/game/state'
-import { Game } from '../../src/game/game';
+import { Stage, StageInterface } from '../../../src/game/stage/index'
+import { GameStateInterface } from '../../../src/game/state'
+import { Game } from '../../../src/game/game';
 
 class StageMock implements StageInterface {
   init() {}

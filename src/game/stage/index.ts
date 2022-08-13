@@ -1,8 +1,6 @@
 "use strict"
 
-
-import { GameStateInterface } from "./state";
-
+import { GameStateInterface } from "../state";
 
 function createElement(type: string, options: any ) {
     const element = document.createElement(type)

@@ -5,7 +5,7 @@ import {
 	CanvasStage,
 	HudStage,
 	DebugStage 
-} from "./game/stage";
+} from "./game/stage/index";
 
 import { 
 	GameStateInterface,

@@ -1,6 +1,6 @@
 import { 
     StageInterface,
-} from "./stage";
+} from "./stage/index";
 
 import { 
     GameStateInterface,

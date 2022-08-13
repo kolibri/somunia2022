@@ -15,8 +15,6 @@ describe('game works', () => {
     const game = new Game('', mock)
     game.init()
     expect(init_spy).toHaveBeenCalled();
-
-    expect(true).toBe(true);
   });
 });
 
