@@ -5,16 +5,20 @@ import {
 	CanvasStage,
 	HudStage,
 	DebugStage 
-} from "./game/stage/index";
+} from "./game/stage/index"
 
 import { 
 	GameStateInterface,
 	GameState
-} from "./game/state";
+} from "./game/state"
 
 import { 
 	Game
-} from "./game/game";
+} from "./game/game"
+
+import { 
+	Controls
+} from "./game/controls"
 
 
 const mainElement = document.getElementById('game')
