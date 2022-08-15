@@ -9,55 +9,66 @@ const keymaps = {
 
 
 export class Controls {
-    
-    up: Key = new Key([])
-    right: Key = new Key([])
-    down: Key = new Key([])
-    left: Key = new Key([])
+    keys: Key[]
+    constructor(keymap){
+        this.keys = keymap.map(function (keysCodes) {
+            return new Key(keysCodes)
+        })
 
-    confirm: Key = new Key([])
-    cancel: Key = new Key([])
-    menu: Key = new Key([])
-    //: Key = new Key([])
-    
-    pause: Key = new Key([])
-    pause: Key = new Key([])
-
-    //: Key = new Key([])
-    //: Key = new Key([])
-    //: Key = new Key([])
-    //: Key = new Key([])
-
-
-
-    isKeyPressed(key: string, value: any){
-        this.state[key] = value
     }
+
+    listen(event, keycode){
+        for (key of this.keys) {
+            key.listen(keycode)
+        }
+    }
+
 }
+
+
+const controls = new Controls(keymaps)
+
 
 function init_listener(){
     addEventListener('keydown', (event) => {
-        event.keyCode
+        console.log('keydown event.keycode: ', event.keyCode)
+        controls.listen('press', event.keyCode)
     })
-
-
+    addEventListener('keyup', (event) => {
+        console.log('keyup event.keycode', event.keyCode)
+        controls.listen('release', event.keyCode)
+    })
 }
 
 
-/*export class GameStateNotFoundError extends Error {
-    constructor(key: string) {
-        super('There is no state value "' + key + '"')
-        Object.setPrototypeOf(this, GameStateNotFoundError.prototype);
-
-    }
-}*/
-
 
 export class Key {
-   keymap: string[] = []
+    keyCodes: string[] = []
+    state: string
+    constructor(keyCodes) {
+        this.keyCodes = keyCodes
+        this.state = 'released'
+    }
 
-   isPressed(): bool {
+    listen(event, keycode){
+        if (!this.keyCodes.include(keycode)) {
+            return
+        }
 
-   }
+        if ('press' == event) {
+            this.state = 'pressed'
+        }
+        if ('release' == event) {
+            this.state = 'released'
+        }
+
+    }
+
+    isPressed(): bool {
+        return this.state === 'pressed'
+    }
+    isReleased(): bool {
+        return this.state === 'released'
+    }
 }
 

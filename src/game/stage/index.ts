@@ -40,12 +40,19 @@ function createElement(type: string, options: any ) {
     return element
 }
 
-
+/**
+ * Stage is where the game is represented.
+ * each stage renders the same game at the same state
+ * I guess, it should not alter the game state, but it might depend on how controls are embedded 
+ */
 export interface StageInterface {
 	init(): void
 	render(state: GameStateInterface): void
 }
 
+/**
+ * Main Stage, that just redirects to the other stages
+ */
 export class Stage {
 	readonly stages: StageInterface[]
 
